@@ -80,6 +80,7 @@ header {
   border-radius: 10px;
   padding: 5px 15px;
   input {
+    padding-left: 15px;
     border: none;
     font-size: 16px;
     width: 200px;
@@ -110,7 +111,7 @@ header {
   ul {
     li {
       display: flex;
-      align-overlays: flex-end;
+      align-items: flex-end;
       margin-bottom: 20px;
     }
     div {
@@ -132,7 +133,9 @@ header {
   }
 }
 
-
+.cardSneakers{
+  flex-wrap: wrap;
+}
 .cartItemImg {
   height: 70px;
   width: 70px;
