@@ -85,8 +85,15 @@ header {
     width: 200px;
   }
 }
+.items {
+  flex: 1;
+  overflow: auto;
+  margin-bottom: 45px;
+}
 
 .drawer {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   right: 0;
   background: #ffffff;
@@ -99,7 +106,34 @@ header {
   }
 }
 
-.cartItemImg{
+.cartTotalBlock {
+  ul {
+    li {
+      display: flex;
+      align-overlays: flex-end;
+      margin-bottom: 20px;
+    }
+    div {
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #dfdfdf;
+      position: relative;
+      top: -3px;
+      margin: 0 10px;
+    }
+  }
+  button {
+    width: 100%;
+    height: 55px;
+    color: #ffffff;
+    background-color: #9dd458;
+    border-radius: 10px;
+    border: 0;
+  }
+}
+
+
+.cartItemImg {
   height: 70px;
   width: 70px;
   background-size: contain;
