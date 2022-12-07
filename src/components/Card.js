@@ -2,8 +2,7 @@ function Card({ item }) {
   return (
     <div className="card mb-30">
       <div className="favorite">
-      <img className="favorite" src="/img/liked.svg" alt="" />
-
+        <img className="favorite" src="/img/liked.svg" alt="" />
       </div>
       <img width={133} height={112} src={item.image} alt="" />
       <p>{item.name}</p>

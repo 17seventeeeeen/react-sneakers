@@ -1,6 +1,7 @@
 import Card from "./components/Card";
 import Header from "./components/Header";
 import Drawer from "./components/Drawer";
+import { useState } from "react";
 
 const arr = [
   {
@@ -45,12 +46,12 @@ const arr = [
   },
 ];
 
-
 function App() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="wrapper clear">
-      <Drawer />
-      <Header />
+      {open ? <Drawer setOpen={setOpen} /> : null}
+      <Header setOpen={setOpen} />
       <div className="content p-40">
         <div className="mb-40 d-flex align-center justify-between">
           <h1>Все крoссовки</h1>
@@ -59,9 +60,10 @@ function App() {
             <input placeholder="поиск..." type="text" />
           </div>
         </div>
+        
         <div className="cardSneakers d-flex">
           {arr.map((item) => (
-            <Card item={item} />
+            <Card item={item}/>
           ))}
         </div>
       </div>
