@@ -1,4 +1,7 @@
+import { Link, useNavigate } from "react-router-dom";
+
 function Header({ setOpen }) {
+  const navigate = useNavigate();
   return (
     <header className="d-flex justify-between align-center p-40">
       <div className="d-flex align-center">
@@ -19,13 +22,15 @@ function Header({ setOpen }) {
             alt=""
           />
           <span>1205 руб.</span>
-          <img
-            className="ml-10"
-            width={18}
-            height={18}
-            src="/img/header-svg2.svg"
-            alt=""
-          />
+          <Link to="/liked">
+            <img
+              className="ml-10"
+              width={18}
+              height={18}
+              src="/img/header-svg2.svg"
+              alt=""
+            />
+          </Link>
         </li>
         <li className="mr-15">
           <img width={18} height={18} src="/img/header-svg3.svg" alt="" />
