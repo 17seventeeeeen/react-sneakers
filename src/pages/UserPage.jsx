@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
 
-export default function LikedPage() {
+export default function UserPage() {
   return (
     <>
       <div className="d-flex align-center">
@@ -16,14 +16,14 @@ export default function LikedPage() {
             alt=""
           />
         </Link>
-        <h1 className="ml-30">Мои закладки </h1>
+        <h1 className="ml-30">Мои Покупки </h1>
       </div>
       <div className="cardSneakers d-flex justify-between ml-20">
         <Card
           item={{
             name: "Мужские Кроссовки Nike Blazer Mid Suede",
             price: 15600,
-            image: "/img/sneakers/sneakers-3.jpg",
+            image: "/img/sneakers/sneakers-7.jpg",
           }}
         />
       </div>

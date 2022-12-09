@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "../components/Card";
 import { data } from "../mock/data";
 
-export default function HomePage() {
+export default function HomePage({ addOrDeleteFromCart, cart }) {
   return (
     <>
       <div className="content p-40">
@@ -16,7 +16,12 @@ export default function HomePage() {
 
         <div className="cardSneakers d-flex">
           {data.map((item) => (
-            <Card key={item.image} item={item} />
+            <Card
+              addOrDeleteFromCart={addOrDeleteFromCart}
+              key={item.image}
+              cart={cart}
+              item={item}
+            />
           ))}
         </div>
       </div>

@@ -1,4 +1,25 @@
-function Drawer({ setOpen }) {
+function CartItem({ item, addOrDeleteFromCart }) {
+  return (
+    <div className="cartItem d-flex align-center mb-20">
+      <div
+        style={{ backgroundImage: `url(${item.image})` }}
+        className="cartItemImg"
+      ></div>
+      <div className="mr-20">
+        <p className="mb-5">{item.name}</p>
+        <b>{item.price} руб.</b>
+      </div>
+      <img
+        onClick={() => addOrDeleteFromCart(item)}
+        className="removeBtn"
+        src="/img/remove-btn.svg"
+        alt=""
+      />
+    </div>
+  );
+}
+
+function Drawer({ setOpen, addOrDeleteFromCart, cart }) {
   return (
     <div className="overlay">
       <div className="drawer">
@@ -12,29 +33,13 @@ function Drawer({ setOpen }) {
           />
         </h2>
         <div className="items">
-          <div className="cartItem d-flex align-center mb-20">
-            <div
-              style={{ backgroundImage: "url(/img/sneakers/sneakers-1.jpg)" }}
-              className="cartItemImg"
-            ></div>
-            <div className="mr-20">
-              <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-              <b>12 999 руб.</b>
-            </div>
-            <img className="removeBtn" src="/img/remove-btn.svg" alt="" />
-          </div>
-
-          <div className="cartItem d-flex align-center mb-20">
-            <div
-              style={{ backgroundImage: "url(/img/sneakers/sneakers-1.jpg)" }}
-              className="cartItemImg"
-            ></div>
-            <div className="mr-20">
-              <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-              <b>12 999 руб.</b>
-            </div>
-            <img className="removeBtn" src="/img/remove-btn.svg" alt="" />
-          </div>
+          {cart.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              addOrDeleteFromCart={addOrDeleteFromCart}
+            />
+          ))}
         </div>
 
         <div className="cartTotalBlock">
